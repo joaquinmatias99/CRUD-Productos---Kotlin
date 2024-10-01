@@ -1,0 +1,15 @@
+INSERT INTO producto (nombre, precio) VALUES ('Zapatillas deportivas', 70);
+INSERT INTO producto (nombre, precio) VALUES ('Zapatillas de cuero', 90);
+INSERT INTO producto (nombre, precio) VALUES ('Zapatillas para correr', 80);
+INSERT INTO producto (nombre, precio) VALUES ('Zapatillas casuales', 60);
+INSERT INTO producto (nombre, precio) VALUES ('Camisa de algodón', 30);
+INSERT INTO producto (nombre, precio) VALUES ('Pantalones vaqueros', 45);
+INSERT INTO producto (nombre, precio) VALUES ('Sudadera con capucha', 50);
+INSERT INTO producto (nombre, precio) VALUES ('Chaqueta de cuero', 120);
+INSERT INTO producto (nombre, precio) VALUES ('Vestido de verano', 40);
+INSERT INTO producto (nombre, precio) VALUES ('Camiseta de deporte', 25);
+INSERT INTO producto (nombre, precio) VALUES ('Zapatillas de skate', 75);
+INSERT INTO producto (nombre, precio) VALUES ('Pantalones cortos', 35);
+INSERT INTO producto (nombre, precio) VALUES ('Abrigo de invierno', 150);
+INSERT INTO producto (nombre, precio) VALUES ('Botas de montaña', 100);
+INSERT INTO producto (nombre, precio) VALUES ('Zapatillas de baile', 65);
