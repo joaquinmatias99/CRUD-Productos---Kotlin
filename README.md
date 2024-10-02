@@ -1,6 +1,6 @@
 # CRUD de Productos en Kotlin
 
-Este es un proyecto muy simple de CRUD para gestionar productos utilizando Kotlin, Spring Boot, JPA y una base de datos en memoria H2.
+Este es un proyecto muy simple de CRUD para gestionar productos y proveedores utilizando Kotlin, Spring Boot, JPA y una base de datos en memoria H2.
 
 ## Índice
 
@@ -11,10 +11,9 @@ Este es un proyecto muy simple de CRUD para gestionar productos utilizando Kotli
 
 ## Características
 
-- Crear productos
-- Leer productos por ID
-- Actualizar productos por ID
-- Eliminar productos por ID
+- Crear, leer, actualizar y eliminar productos
+- Crear, leer, actualizar y eliminar proveedores
+- Leer productos asociados a un proveedor
 - Base de datos en memoria H2 para pruebas rápidas
 
 ## Tecnologías Utilizadas
