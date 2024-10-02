@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository
 @Repository
 interface IProductoRepository : JpaRepository<Producto, Long> {
     fun existsByProveedorId(proveedorId: Long): Boolean
+
+    fun findByProveedorId(proveedorId: Long): List<Producto>
 }

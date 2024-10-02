@@ -5,7 +5,7 @@ import com.producto.crud.repository.IProductoRepository
 import org.springframework.stereotype.Service
 
 @Service
-class ProductoService (private val productoRepository : IProductoRepository) : IProductoService{
+class ProductoService(private val productoRepository: IProductoRepository) : IProductoService {
     override fun getProductos(): List<Producto> {
         return productoRepository.findAll()
     }
@@ -16,9 +16,16 @@ class ProductoService (private val productoRepository : IProductoRepository) : I
         }
     }
 
+    override fun getProductosByIdProveedor(id: Long): List<Producto> {
+        val productos = productoRepository.findByProveedorId(id)
+        if (productos.isEmpty()) {
+            throw Exception("No existen productos asociados al proveedor con id: $id")
+        }
+        return productos
+    }
 
     override fun addProducto(producto: Producto): Producto {
-        return  productoRepository.save(producto)
+        return productoRepository.save(producto)
     }
 
     override fun editProducto(id: Long, producto: Producto): Producto {
@@ -32,10 +39,10 @@ class ProductoService (private val productoRepository : IProductoRepository) : I
     }
 
 
-    override fun deleteProductoById(id: Long){
-        if(productoRepository.existsById(id)) {
+    override fun deleteProductoById(id: Long) {
+        if (productoRepository.existsById(id)) {
             productoRepository.deleteById(id)
-        }else {
+        } else {
             throw Exception("No existe un producto con la id:$id")
         }
     }

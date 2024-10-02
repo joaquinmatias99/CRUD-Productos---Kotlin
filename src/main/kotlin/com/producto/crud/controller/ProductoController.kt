@@ -31,6 +31,15 @@ class ProductoController(private val productoService: IProductoService)
             ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: ${e.message}")
         }
     }
+    @GetMapping("/proveedor/{id}")
+    fun getProductosByIdProveedor(@PathVariable id: Long): ResponseEntity<Any> {
+        return try {
+            val producto = productoService.getProductosByIdProveedor(id)
+            ResponseEntity.ok(producto)
+        } catch (e: Exception) {
+            ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: ${e.message}")
+        }
+    }
 
     @PostMapping
     fun addProducto(@RequestBody producto: Producto) : ResponseEntity<Producto>
