@@ -3,8 +3,6 @@ package com.producto.crud.service
 import com.producto.crud.model.Producto
 import com.producto.crud.repository.IProductoRepository
 import org.springframework.stereotype.Service
-import java.lang.IllegalArgumentException
-import java.util.*
 
 @Service
 class ProductoService (private val productoRepository : IProductoRepository) : IProductoService{
@@ -14,7 +12,7 @@ class ProductoService (private val productoRepository : IProductoRepository) : I
 
     override fun getProductosById(id: Long): Producto {
         return productoRepository.findById(id).orElseThrow {
-            IllegalArgumentException("No existe un producto con la id: $id")
+            Exception("No existe un producto con la id: $id")
         }
     }
 
@@ -26,10 +24,10 @@ class ProductoService (private val productoRepository : IProductoRepository) : I
     override fun editProducto(id: Long, producto: Producto): Producto {
         val productoExistente = productoRepository.findById(id)
         return if (productoExistente.isPresent) {
-            val productoActualizado = productoExistente.get().copy(nombre = producto.nombre, precio = producto.precio)
+            val productoActualizado = productoExistente.get().copy(nombre = producto.nombre, precio = producto.precio, proveedor = producto.proveedor)
             productoRepository.save(productoActualizado)
         } else {
-            throw IllegalArgumentException("No existe un producto con la ID: $id")
+            throw Exception("No existe un producto con la ID: $id")
         }
     }
 
@@ -38,7 +36,7 @@ class ProductoService (private val productoRepository : IProductoRepository) : I
         if(productoRepository.existsById(id)) {
             productoRepository.deleteById(id)
         }else {
-            throw IllegalArgumentException("No existe un producto con la id:$id")
+            throw Exception("No existe un producto con la id:$id")
         }
     }
 }

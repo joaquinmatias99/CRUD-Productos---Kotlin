@@ -7,82 +7,170 @@
 	},
 	"item": [
 		{
-			"name": "addProducto",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"Zapatillas\", \r\n    \"precio\": 100.0\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+			"name": "Productos",
+			"item": [
+				{
+					"name": "addProducto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Zapatillas\", \r\n    \"precio\": 100.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/productos",
+						"description": "Generated from cURL: curl -X POST http://localhost:8080/api/productos -H \"Content-Type: application/json\" -d '{\"nombre\": \"Producto 1\", \"precio\": 100.0}'\n"
+					},
+					"response": []
 				},
-				"url": "http://localhost:8080/productos",
-				"description": "Generated from cURL: curl -X POST http://localhost:8080/api/productos -H \"Content-Type: application/json\" -d '{\"nombre\": \"Producto 1\", \"precio\": 100.0}'\n"
-			},
-			"response": []
-		},
-		{
-			"name": "getProductos",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "http://localhost:8080/productos",
-				"description": "Generated from cURL: curl http://localhost:8080/api/productos"
-			},
-			"response": []
-		},
-		{
-			"name": "getProductoById",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "http://localhost:8080/productos/1",
-				"description": "Generated from cURL: curl http://localhost:8080/api/productos/1"
-			},
-			"response": []
-		},
-		{
-			"name": "editProducto",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"nombre\": \"Producto Actualizado\", \"precio\": 150.0}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+				{
+					"name": "getProductos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/productos",
+						"description": "Generated from cURL: curl http://localhost:8080/api/productos"
+					},
+					"response": []
 				},
-				"url": "http://localhost:8080/productos/1",
-				"description": "Generated from cURL: curl -X PUT http://localhost:8080/api/productos/1 -H \"Content-Type: application/json\" -d '{\"nombre\": \"Producto Actualizado\", \"precio\": 150.0}'"
-			},
-			"response": []
+				{
+					"name": "getProductoById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/productos/1",
+						"description": "Generated from cURL: curl http://localhost:8080/api/productos/1"
+					},
+					"response": []
+				},
+				{
+					"name": "editProducto",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nombre\": \"Producto Actualizado\", \"precio\": 150.0}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/productos/1",
+						"description": "Generated from cURL: curl -X PUT http://localhost:8080/api/productos/1 -H \"Content-Type: application/json\" -d '{\"nombre\": \"Producto Actualizado\", \"precio\": 150.0}'"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProducto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/productos/1",
+						"description": "Generated from cURL: curl -X DELETE http://localhost:8080/api/productos/1"
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"name": "deleteProducto",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": "http://localhost:8080/productos/1",
-				"description": "Generated from cURL: curl -X DELETE http://localhost:8080/api/productos/1"
-			},
-			"response": []
+			"name": "Proveedor",
+			"item": [
+				{
+					"name": "getProveedor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/proveedor",
+						"description": "Generated from cURL: curl -X GET http://localhost:8080/proveedor\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "getProveedorById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/proveedor/1",
+						"description": "Generated from cURL: curl -X GET http://localhost:8080/proveedor/{id}\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "addProveedor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Juan Pablo\",\r\n    \"apellido\": \"Diaz\",\r\n    \"telefono\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/proveedor",
+						"description": "Generated from cURL: curl -X POST http://localhost:8080/proveedor \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n    \"nombre\": \"Proveedor Uno\",\r\n    \"apellido\": \"Apellido Uno\",\r\n    \"telefono\": \"123456789\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "editProveedorById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Proveedor Actualizado\",\r\n    \"apellido\": \"Apellido Actualizado\",\r\n    \"telefono\": \"987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/proveedor/1",
+						"description": "Generated from cURL: curl -X PUT http://localhost:8080/proveedor/{id} \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n    \"nombre\": \"Proveedor Actualizado\",\r\n    \"apellido\": \"Apellido Actualizado\",\r\n    \"telefono\": \"987654321\"\r\n}'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/proveedor/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/proveedor/2",
+						"description": "Generated from cURL: curl -X DELETE http://localhost:8080/proveedor/{id}\r\n"
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
